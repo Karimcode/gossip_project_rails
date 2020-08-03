@@ -1,0 +1,26 @@
+<div class="container show_gossip">
+  <div class="col text-center">
+    <h2>Voici le gossip n°<%=@gossip.id%></h2><br>
+  </div>
+
+  <div class="card mx-3">
+    <div class="card-header">
+      <strong><%= @gossip.title.capitalize!%></strong>
+    </div>
+
+    <div class="card-body px-4">
+
+      <blockquote class="blockquote mb-0">
+        <em>"<%= @gossip.content %>"</em><p></p>
+        <footer class="blockquote-footer">
+          <p>rédigé le <%= @gossip.created_at %></p>
+          <p>Par : <a href="<%=user_path(@gossip.user_id)%>" class="card-link"><%= User.find(@gossip.user_id).first_name%> <%= User.find(@gossip.user_id).last_name %></a></p>
+          <p>Clique <a href="<%=city_path(@gossip.city_id)%>" class="card-link">ici</a> pour voir tout les gossips de <%=City.find(@gossip.city_id).name%>.</p>
+
+
+              <br><p>Connecte toi pour modifier tes potins</p>
+        </footer>
+      </blockquote>
+    </div>
+  </div>
+</div>
