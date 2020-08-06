@@ -7,6 +7,8 @@ class User < ApplicationRecord
     validates :city_id, presence: true
     belongs_to :city
     has_many :gossips
-
+    has_many :comment
+    has_secure_password
+    has_many :likes
 end
 

@@ -17,8 +17,18 @@
           <p>Par : <a href="<%=user_path(@gossip.user_id)%>" class="card-link"><%= User.find(@gossip.user_id).first_name%> <%= User.find(@gossip.user_id).last_name %></a></p>
           <p>Clique <a href="<%=city_path(@gossip.city_id)%>" class="card-link">ici</a> pour voir tout les gossips de <%=City.find(@gossip.city_id).name%>.</p>
 
-
+          <%if current_user%>
+            <%if current_user.id == @gossip.user_id%>
+              <div class="row flex-row">
+                <a href="<%=edit_gossip_path(@gossip.id)%>" class="btn btn-info ml-4">Modifier</a>
+                <%= form_tag url_for(action: 'destroy'), method: "delete" do%>
+                  <%= submit_tag "Supprimer", class: 'btn btn-danger ml-3'%>
+                <%end%>
+              </div>
+            <%end%>
+          <%else%>
               <br><p>Connecte toi pour modifier tes potins</p>
+          <%end%>
         </footer>
       </blockquote>
     </div>

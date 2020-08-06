@@ -8,23 +8,23 @@
 
 
 # User.destroy_all
-# Gossip.destroy_all
+Gossip.destroy_all
 # City.destroy_all
 
 
-paris_city = City.create!(name: 'Paris',
-                  zipcode: "75500")
+# paris_city = City.create!(name: 'Paris',
+#                   zipcode: "75500")
 
 
-puts "1 city créée"
+# puts "1 city créée"
 
-user_test = User.create!(first_name: 'Karim', last_name: "Test", description: "Un utilisateur test", email: "test2@test.com", age: "25", city_id: "65")
-
-
-puts "1 user créé"
+# user_test = User.create!(first_name: 'Karim', last_name: "Test", description: "Un utilisateur test", email: "test2@test.com", age: "25", city_id: "70")
 
 
-gossip_un = Gossip.create!(title: "Gossip_test", content: "Un faux gossip tout pourri", user_id: "3", city_id: "65")
+# puts "1 user créé"
+
+
+gossip_un = Gossip.create!(title: "Gossip_test", content: "Un faux gossip tout pourri", user_id: "5", city_id: "70")
 
 
 puts "3 gossips créés"

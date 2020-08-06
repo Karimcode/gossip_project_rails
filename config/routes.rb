@@ -1,4 +1,9 @@
 Rails.application.routes.draw do
+  # get 'sessions/new'
+  # get 'sessions/create'
+  # get 'sessions/destroy'
+  get 'city/index'
+  get 'city/show'
   get 'welcome/hello'
   get 'team/display'
   get 'contact/display'
